@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { ProjectComponent } from './project/project.component';
 import { ClientComponent } from './client/client.component';
 import {RouterModule, Routes} from '@angular/router';
-import { from } from 'rxjs';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ListClientComponent } from './list-client/list-client.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // const appRoutes: Routes = [
 //   { path: 'client', component: ClientComponent
@@ -26,11 +28,14 @@ import { HomeComponent } from './home/home.component';
     ClientComponent,
     ContactComponent,
     AboutComponent,
-    HomeComponent
-  ],
+    HomeComponent,
+    ListClientComponent
+    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

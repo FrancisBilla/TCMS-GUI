@@ -15,9 +15,8 @@
             <div class="col-lg-4 col-md-6 text-center">
               <div class="mt-5">
                 <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-                <p class="text-muted mb-0">Our wonderful CLient.</p>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#portfolio">View Client</a>
-                
+                <p class="text-muted mb-0">Our wonderful CLient.</p>              
+                <a class="btn btn-primary btn-xl js-scroll-trigger" routerLink="/listclient" routerLinkActive="active">View Client</a>                
               </div>
             </div>
     
@@ -36,7 +35,7 @@
       <section id="portfolio">
         <div class="container-fluid p-0">
           <div class="row no-gutters">
-            <div class="col-lg-4 col-sm-6">
+             <div class="col-lg-4 col-sm-6">
               <a class="portfolio-box" href="../assets/img/portfolio/fullsize/ms1.jpg">
                 <img class="img-fluid" src="../assets/img/portfolio/thumbnails/ms1.jpg" alt="">
                 <div class="portfolio-box-caption">
@@ -49,7 +48,7 @@
                 </div>
               </a>
             </div>
-            <div class="col-lg-4 col-sm-6">
+             <div class="col-lg-4 col-sm-6">
               <a class="portfolio-box" href="../assets/img/portfolio/fullsize/axecap1.jpg">
                 <img class="img-fluid" src="../assets/img/portfolio/thumbnails/axecap1.jpg" alt="">
                 <div class="portfolio-box-caption">
@@ -101,6 +100,7 @@
                 </div>
               </a>
             </div>
+            
             <div class="col-lg-4 col-sm-6">
               <a class="portfolio-box" href="../assets/img/portfolio/fullsize/citibank1.jpg">
                 <img class="img-fluid" src="../assets/img/portfolio/thumbnails/citibank1.jpg" alt="">
@@ -121,24 +121,24 @@
     
     
       <!--Customer Form Section -->
-      <section class="page-section bg-primary" id="form-customer">
+      <section class="page-section bg-primary" id="form-customer" (ngSubmit)="onSubmit()">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
               <h2 class="text-white mt-0">BECOME OUR CLIENT!</h2>
     
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" novalidate [formGroup]="clientForm">
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationCustom01">First name</label>
-                    <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+                    <input type="text" formControlName="firstName" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationCustom02">Last name</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+                    <input type="text"formControlName="LastName" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -151,7 +151,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                       </div>
-                      <input type="text" class="form-control" id="validationCustomUsername" placeholder="Email" aria-describedby="inputGroupPrepend" required>
+                      <input type="text" formControlName="Email" class="form-control" id="validationCustomUsername" placeholder="Email" aria-describedby="inputGroupPrepend" required>
                       <div class="invalid-feedback">
                         Please provide your email.
                       </div>
@@ -165,7 +165,7 @@
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
                     <label for="validationCustom03">City</label>
-                    <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+                    <input type="text" formControlName="City" class="form-control" id="validationCustom03" placeholder="City" required>
                     <div class="invalid-feedback">
                       Please provide a valid city.
                     </div>
@@ -173,7 +173,7 @@
     
                   <div class="col-md-3 mb-3">
                     <label for="validationCustom04">Address</label>
-                    <input type="text" class="form-control" id="validationCustom04" placeholder="Address" required>
+                    <input type="text" formControlName="Address" class="form-control" id="validationCustom04" placeholder="Address" required>
                     <div class="invalid-feedback">
                       Please provide a valid Address.
                     </div>
@@ -181,7 +181,7 @@
     
                   <div class="col-md-3 mb-3">
                     <label for="validationCustom05">Contact</label>
-                    <input type="text" class="form-control" id="validationCustom05" placeholder="Contact" required>
+                    <input type="text" formControlName="Contact" class="form-control" id="validationCustom05" placeholder="Contact" required>
                     <div class="invalid-feedback">
                       Please provide a valid Contact.
                     </div>
@@ -189,7 +189,7 @@
                 </div>
                 <div class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <input  class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                     <label class="form-check-label" for="invalidCheck">
                       Agree to terms and conditions
                     </label>
@@ -198,9 +198,12 @@
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-primary" type="submit">Submit form</button>
+                <button class="btn btn-primary" type="submit"  [disabled]="!clientForm.valid">Submit form</button>
               </form>
-              
+              <!-- <label>
+                  Name:
+                  <input type="text" [formControl]="client">
+                </label> -->
               <script>
               // Example starter JavaScript for disabling form submissions if there are invalid fields
               (function() {
