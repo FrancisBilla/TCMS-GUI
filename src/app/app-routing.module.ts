@@ -6,9 +6,11 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ListClientComponent } from './list-client/list-client.component';
+import { FormClientComponent } from './form-client/form-client.component';
 
 
 const routes: Routes = [
+  {path: 'formclient', component: FormClientComponent},
   {path: 'listclient', component: ListClientComponent},
   {path: 'client', component: ClientComponent},
   {path: 'project', component: ProjectComponent},

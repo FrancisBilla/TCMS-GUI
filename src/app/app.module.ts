@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListClientComponent } from './list-client/list-client.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormClientComponent } from './form-client/form-client.component';
 
 // const appRoutes: Routes = [
 //   { path: 'client', component: ClientComponent
@@ -29,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactComponent,
     AboutComponent,
     HomeComponent,
-    ListClientComponent
+    ListClientComponent,
+    FormClientComponent
     ],
   imports: [
     BrowserModule,

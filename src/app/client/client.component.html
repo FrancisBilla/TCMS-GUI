@@ -119,15 +119,15 @@
       </section>
     
     
-    
-      <!--Customer Form Section -->
-      <section class="page-section bg-primary" id="form-customer" (ngSubmit)="onSubmit()">
+<!--     
+      <!--Customer Form Section --
+      <section class="page-section bg-primary" id="form-customer">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
               <h2 class="text-white mt-0">BECOME OUR CLIENT!</h2>
     
-              <form class="needs-validation" novalidate [formGroup]="clientForm">
+              <form class="needs-validation" novalidate [formGroup]="clientForm" (ngSubmit)="onSubmit()">
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationCustom01">First name</label>
@@ -203,7 +203,7 @@
               <!-- <label>
                   Name:
                   <input type="text" [formControl]="client">
-                </label> -->
+                </label> --
               <script>
               // Example starter JavaScript for disabling form submissions if there are invalid fields
               (function() {
@@ -227,7 +227,7 @@
              </div>
           </div>
         </div>
-      </section>
+      </section> -->
     
     
      

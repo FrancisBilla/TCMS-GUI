@@ -8,14 +8,14 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
+  [x: string]: any;
 
-  client = new FormControl(' ');
+   client = new FormControl(' ');
   constructor() { }
-
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
+   onSubmit() {
+     // TODO: Use EventEmitter with form value
     console.warn(this.clientForm.value);
-  }
+   }
 
   ngOnInit() {
   }

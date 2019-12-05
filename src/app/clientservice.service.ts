@@ -9,9 +9,13 @@ import { Client } from './client';
 export class ClientserviceService {
 
   constructor(private http: HttpClient) { }
-  private clientUrl = 'https://boiling-bastion-30474.herokuapp.com/clients';
+  private clientUrl = 'https://boiling-bastion-30474.herokuapp.com';
 
   getClient(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.clientUrl );
+    return this.http.get<Client[]>(this.clientUrl + '/clients');
+  }
+
+  addClient(client: Client): Observable<Client> {
+    return this.http.post<Client>(this.clientUrl + '/clients/addAClient', client);
   }
 }
